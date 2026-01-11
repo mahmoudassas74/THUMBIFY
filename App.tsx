@@ -3,15 +3,15 @@ import React, { useState, useEffect, createContext, useContext } from 'react';
 import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Play, ArrowRight, Globe, Settings, Twitter, Youtube, Instagram } from 'lucide-react';
-import Home from "./pages/Home";
-import Pricing from "./pages/Pricing";
-import HowItWorks from "./pages/HowItWorks";
-import Contact from "./pages/Contact";
-import Audit from "./pages/Audit";
-import Admin from "./pages/Admin";
-import ChatBot from './components/ChatBot.tsx';
-import { translations } from './translations.ts';
-import { SITE_CONFIG } from './config.ts';
+import Home from './pages/Home';
+import Pricing from './pages/Pricing';
+import HowItWorks from './pages/HowItWorks';
+import Contact from './pages/Contact';
+import Audit from './pages/Audit';
+import Admin from './pages/Admin';
+import ChatBot from './components/ChatBot';
+import { translations } from './translations';
+import { SITE_CONFIG } from './config';
 
 type Language = 'en' | 'ar';
 
@@ -106,6 +106,7 @@ const Navbar = () => {
 
             <LanguageToggle />
 
+            {/* Link to beta package directly as requested in screenshot update */}
             <Link
               to="/pricing#beta"
               className="bg-[#ff4d00] text-white px-6 py-2.5 rounded-2xl text-sm font-black hover:bg-[#e64500] hover:scale-105 active:scale-95 transition-all flex items-center gap-2 shadow-[0_10px_20px_rgba(255,77,0,0.2)]"
